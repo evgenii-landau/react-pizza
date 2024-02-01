@@ -1,0 +1,100 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+}
+.item .img {
+  margin-bottom: 11px;
+}
+.item .select {
+  width: 100%;
+  padding: 7px 5px;
+  margin-bottom: 17px;
+  border-radius: 10px;
+  background: #F3F3F3;
+}
+.item .select .selectRowOne {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+.item .select .selectRowOne span {
+  width: 130px;
+  padding: 10px 3px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.item .select .selectRowOne span.active {
+  background: #FFF;
+}
+.item .select .selectRowTwo {
+  display: flex;
+  justify-content: space-between;
+}
+.item .select .selectRowTwo span {
+  width: 85px;
+  padding: 10px 3px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.item .select .selectRowTwo span.active {
+  background: #FFF;
+}
+.item .choose {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item .choose .price {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.33px;
+}
+.item .choose div {
+  display: flex;
+  gap: 8px;
+  padding: 12px 10px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-in-out;
+  border-radius: 30px;
+  border: 1px solid #EB5A1E;
+  background: #FFF;
+  cursor: pointer;
+}
+.item .choose div img {
+  margin-right: 7px;
+}
+.item .choose div button {
+  color: #EB5A1E;
+}
+.item .choose div .count {
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #EB5A1E;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.item .choose div:hover {
+  background-color: #EB5A1E;
+}
+.item .choose div:hover button {
+  color: #FFFFFF;
+}
+.item .choose div:hover .count {
+  background-color: #FFFFFF;
+  color: #EB5A1E;
+}
+.item .choose div:active {
+  transform: translateY(-2px);
+}
+
+/*# sourceMappingURL=PizzaItem.module.css.map */

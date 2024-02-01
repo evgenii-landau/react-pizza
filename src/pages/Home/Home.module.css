@@ -1,0 +1,7 @@
+.home ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 65px 43px;
+}
+
+/*# sourceMappingURL=Home.module.css.map */

@@ -1,0 +1,21 @@
+.sorted {
+  display: flex;
+  gap: 9px;
+}
+.sorted li {
+  padding: 15px 30px;
+  border-radius: 30px;
+  background: #F9F9F9;
+  transition: transform 0.1s ease-in-out;
+  cursor: pointer;
+}
+.sorted li.active {
+  background: #000;
+  color: #F9F9F9;
+  transform: translateY(2px);
+}
+.sorted li:active {
+  transform: translateY(-2px);
+}
+
+/*# sourceMappingURL=Categories.module.css.map */

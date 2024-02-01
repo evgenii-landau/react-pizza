@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'PNBold';
+    src: url('./fonts/ProximaNova-Bold.ttf');
+}
+@font-face {
+    font-family: 'PNReg';
+    src: url('./fonts/ProximaNova-Regular.ttf');
+}
+@font-face {
+    font-family: 'PNExtraBold';
+    src: url('./fonts/ProximaNova-Extrabld.ttf');
+}

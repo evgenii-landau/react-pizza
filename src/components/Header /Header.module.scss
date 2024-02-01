@@ -1,0 +1,35 @@
+.header {
+  padding: 45px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .headerLeft {
+    display: flex;
+
+    a {
+      margin-right: 16px;
+    }
+  }
+
+  .headerRight {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+
+    border-radius: 30px;
+    background: #FE5F1E;
+
+    div {
+      color: #FFF;
+    }
+
+    span {
+      color: #FFF;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}

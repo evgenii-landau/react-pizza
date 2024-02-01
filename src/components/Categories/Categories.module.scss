@@ -1,0 +1,24 @@
+.sorted {
+  display: flex;
+  gap: 9px;
+
+  li {
+    padding: 15px 30px;
+
+    border-radius: 30px;
+    background: #F9F9F9;
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
+  }
+
+  li.active {
+    background: #000;
+    color: #F9F9F9;
+    transform: translateY(2px);
+  }
+
+  li:active {
+    transform: translateY(-2px);
+  }
+}
+
