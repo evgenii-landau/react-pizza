@@ -1,4 +1,9 @@
-.home ul {
+.home__categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home__list {
   display: flex;
   flex-wrap: wrap;
   gap: 65px 43px;

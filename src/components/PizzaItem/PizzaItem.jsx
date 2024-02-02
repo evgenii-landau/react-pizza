@@ -10,7 +10,7 @@ export const PizzaItem = ({title, imageUrl, types, sizes, price}) => {
 		<li>
 			<div className={classes.item}>
 				<img width={260} height={260} className={classes.img} src={imageUrl} alt="Pizza"/>
-				<h3>
+				<h3 className={classes.title}>
 					{title}
 				</h3>
 				<div className={classes.select}>

@@ -1,5 +1,10 @@
 .home {
-  ul {
+  &__categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__list {
     display: flex;
     flex-wrap: wrap;
     gap: 65px 43px;

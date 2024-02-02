@@ -1,9 +1,9 @@
 import React from "react";
+import {Routes, Route} from "react-router-dom";
 import {Header} from "./components/Header /Header.jsx";
-import {Categories} from "./components/Categories/Categories.jsx";
-import {DropDown} from "./components/DropDown/DropDown.jsx";
 import {Home} from "./pages/Home/Home.jsx";
 import {PizzaItemsService} from "./services /PizzaItemsService.js";
+import {Cart} from "./pages/Cart/Cart.jsx";
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
 				console.log(`Error: ${error}`)
 			}
 		}
+
 		fetchDataPizzaItems()
 	}, []);
 
@@ -26,11 +27,16 @@ function App() {
 		<>
 			<div className='wrapper'>
 				<Header/>
-				<div className='selectSection'>
-					<Categories/>
-					<DropDown/>
-				</div>
-				<Home pizzaItems={pizzaItems}/>
+				<Routes>
+					<Route
+						path='/'
+						element={<Home pizzaItems={pizzaItems}/>}>
+					</Route>
+					<Route
+						path='/cart'
+						element={<Cart/>}>
+					</Route>
+				</Routes>
 			</div>
 		</>
 	)

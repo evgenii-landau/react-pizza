@@ -7,6 +7,13 @@
 .item .img {
   margin-bottom: 11px;
 }
+.item .title {
+  margin-bottom: 22px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
 .item .select {
   width: 100%;
   padding: 7px 5px;
