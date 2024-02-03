@@ -1,11 +1,13 @@
 import classes from './Cart.module.scss';
+import {CartItem} from "../../components/CartItem/CartItem.jsx";
+import {Link} from "react-router-dom";
 
 export const Cart = () => {
 	return (
 		<div className={classes.cart}>
-			<div className={classes.cart__cartTop}>
-				<div className={classes.cart__leftRow}>
-					<svg className={classes.cart__cartImg} width="29.383301" height="29.383316"
+			<div className={classes.cartTop}>
+				<div className={classes.leftRow}>
+					<svg width="29.383301" height="29.383316"
 						 viewBox="0 0 29.3833 29.3833" fill="none"
 						 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<desc>
@@ -29,8 +31,8 @@ export const Cart = () => {
 					</svg>
 					<h1>Корзина</h1>
 				</div>
-				<div className={classes.cart__rightRow}>
-					<svg className={classes.cart__trashImg} width="20.000000" height="20.000000" viewBox="0 0 20 20"
+				<div className={classes.rightRow}>
+					<svg width="20.000000" height="20.000000" viewBox="0 0 20 20"
 						 fill="none"
 						 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<desc>
@@ -55,90 +57,22 @@ export const Cart = () => {
 								  stroke-width="1.200000" stroke-linejoin="round" stroke-linecap="round"/>
 						</g>
 					</svg>
-					<button className={classes.cart__clearCartBtn}>Очистить корзину</button>
+					<button>Очистить корзину</button>
 				</div>
 			</div>
 
-			<ul className={classes.cart__list}>
-				<li className={classes.cart__item}>
-					<div className={classes.cart__itemLeftRow}>
-						<img className={classes.cart__itemImg} width={80} height={80} src="img/pizza-1.png"
-							 alt="pizza"/>
-						<div className={classes.cart__info}>
-							<h3 className={classes.cart__itemTitle}>Сырный цыпленок</h3>
-							<span className={classes.cart__itemDescription}>тонкое тесто, 26 см.</span>
-						</div>
-					</div>
-					<div className={classes.cart__itemRightRow}>
-						<div className={classes.cart__buttons}>
-							<button>
-								<img src="img/remove-btn.png" alt="Remove Button"/>
-							</button>
-							<b>2</b>
-							<button>
-								<img src="img/add-btn.png" alt="Add button"/>
-							</button>
-						</div>
-						<b>770 ₽ </b>
-						<button>
-							<img src="img/remove-item-btn.png" alt="Remove Item Button"/>
-						</button>
-					</div>
-				</li>
-				<li className={classes.cart__item}>
-					<div className={classes.cart__itemLeftRow}>
-						<img className={classes.cart__itemImg} width={80} height={80} src="img/pizza-1.png"
-							 alt="pizza"/>
-						<div className={classes.cart__info}>
-							<h3 className={classes.cart__itemTitle}>Сырный цыпленок</h3>
-							<span >тонкое тесто, 26 см.</span>
-						</div>
-					</div>
-					<div className={classes.cart__itemRightRow}>
-						<div className={classes.cart__buttons}>
-							<button>
-								<img src="img/remove-btn.png" alt="Remove Button"/>
-							</button>
-							<b>2</b>
-							<button>
-								<img src="img/add-btn.png" alt="Add button"/>
-							</button>
-						</div>
-						<b>770 ₽ </b>
-						<button>
-							<img src="img/remove-item-btn.png" alt="Remove Item Button"/>
-						</button>
-					</div>
-				</li>
-				<li className={classes.cart__item}>
-					<div className={classes.cart__itemLeftRow}>
-						<img className={classes.cart__itemImg} width={80} height={80} src="img/pizza-1.png"
-							 alt="pizza"/>
-						<div className={classes.cart__info}>
-							<h3 className={classes.cart__itemTitle}>Сырный цыпленок</h3>
-							<span>тонкое тесто, 26 см.</span>
-						</div>
-					</div>
-					<div className={classes.cart__itemRightRow}>
-						<div className={classes.cart__buttons}>
-							<button>
-								<img src="img/remove-btn.png" alt="Remove Button"/>
-							</button>
-							<b>2</b>
-							<button>
-								<img src="img/add-btn.png" alt="Add button"/>
-							</button>
-						</div>
-						<b>770 ₽ </b>
-						<button>
-							<img src="img/remove-item-btn.png" alt="Remove Item Button"/>
-						</button>
-					</div>
-				</li>
+			<ul>
+				<CartItem/>
 			</ul>
-			<div className={classes.cart__total}>
-				<span className={classes.cart__count}>Всего пицц: <b>3 шт.</b></span>
-				<span className={classes.cart__price}>Сумма заказа: <b>900 ₽</b></span>
+			<div className={classes.orderInfo}>
+				<span>Всего пицц: <b>3 шт.</b></span>
+				<span>Сумма заказа: <b>900 ₽</b></span>
+			</div>
+			<div className={classes.paySection}>
+				<Link to='/'>
+					<button className={classes.btnBack}>Вернуться назад</button>
+				</Link>
+				<button className={classes.btnPay}>Оплатить сейчас</button>
 			</div>
 		</div>
 	)

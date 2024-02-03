@@ -1,85 +1,81 @@
 .cart {
   max-width: 821px;
   margin: 0 auto;
+  padding: 95px 0 130px 0;
+}
 
-  &__cartTop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.cartTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  }
-  &__leftRow {
-    display: flex;
+.leftRow {
+  display: flex;
 
-    h1 {
-      padding: 0;
-      margin: 0;
-    }
-  }
-  &__cartImg {
+  svg {
     margin-right: 17px;
   }
-  &__rightRow {
-    display: flex;
-    line-height: 24px;
+
+  h1 {
+    padding: 0;
+    margin: 0;
   }
-  &__trashImg {
+}
+
+.rightRow {
+  display: flex;
+  line-height: 24px;
+
+  svg {
     margin-right: 7px;
   }
-  &__clearCartBtn {
+
+  button {
     color: rgb(182, 182, 182);
     font-family: PNReg;
     font-size: 16px;
     line-height: 19px;
   }
-  &__itemImg {
-    margin-right: 15px;
-  }
-  &__item {
-    padding: 30px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgb(244, 244, 244);
-  }
-  &__itemLeftRow {
-    display: flex;
-    align-items: center;
-  }
-  &__itemTitle {
-    display: inline-block;
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 27px;
-  }
-  &__itemDescription {
+}
+
+.orderInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  span {
     font-family: PNReg;
-    color: rgb(141, 141, 141);
-    font-size: 18px;
-    line-height: 22px;
-  }
-  &__info {
-    display: flex;
-    flex-direction: column;
-  }
-  &__itemRightRow {
-    display: flex;
-    align-items: center;
-    gap: 93px;
-  }
-  &__buttons {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-  &__total {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__price,
-  &__count {
     font-size: 22px;
     line-height: 27px;
   }
+}
+
+.paySection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnBack,
+.btnPay {
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  padding: 17px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btnBack {
+  color: rgb(202, 202, 202);
+  font-family: PNReg;
+  border: 1px solid rgb(211, 211, 211);
+  background: rgb(255, 255, 255);
+}
+
+.btnPay {
+  color: rgb(255, 255, 255);
+  font-family: PNBold;
+  background: rgb(254, 95, 30);
 }

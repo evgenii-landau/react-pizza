@@ -1,83 +1,78 @@
 .cart {
   max-width: 821px;
   margin: 0 auto;
+  padding: 95px 0 130px 0;
 }
-.cart__cartTop {
+
+.cartTop {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.cart__leftRow {
+
+.leftRow {
   display: flex;
 }
-.cart__leftRow h1 {
+.leftRow svg {
+  margin-right: 17px;
+}
+.leftRow h1 {
   padding: 0;
   margin: 0;
 }
-.cart__cartImg {
-  margin-right: 17px;
-}
-.cart__rightRow {
+
+.rightRow {
   display: flex;
   line-height: 24px;
 }
-.cart__trashImg {
+.rightRow svg {
   margin-right: 7px;
 }
-.cart__clearCartBtn {
+.rightRow button {
   color: rgb(182, 182, 182);
   font-family: PNReg;
   font-size: 16px;
   line-height: 19px;
 }
-.cart__itemImg {
-  margin-right: 15px;
-}
-.cart__item {
-  padding: 30px 0;
+
+.orderInfo {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgb(244, 244, 244);
+  margin-bottom: 30px;
 }
-.cart__itemLeftRow {
-  display: flex;
-  align-items: center;
-}
-.cart__itemTitle {
-  display: inline-block;
-  margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 27px;
-}
-.cart__itemDescription {
+.orderInfo span {
   font-family: PNReg;
-  color: rgb(141, 141, 141);
-  font-size: 18px;
-  line-height: 22px;
-}
-.cart__info {
-  display: flex;
-  flex-direction: column;
-}
-.cart__itemRightRow {
-  display: flex;
-  align-items: center;
-  gap: 93px;
-}
-.cart__buttons {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.cart__total {
-  display: flex;
-  justify-content: space-between;
-}
-.cart__price, .cart__count {
   font-size: 22px;
   line-height: 27px;
+}
+
+.paySection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnBack,
+.btnPay {
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  padding: 17px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btnBack {
+  color: rgb(202, 202, 202);
+  font-family: PNReg;
+  border: 1px solid rgb(211, 211, 211);
+  background: rgb(255, 255, 255);
+}
+
+.btnPay {
+  color: rgb(255, 255, 255);
+  font-family: PNBold;
+  background: rgb(254, 95, 30);
 }
 
 /*# sourceMappingURL=Cart.module.css.map */

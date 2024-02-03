@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import classes from './Header.module.scss'
 
 export const Header = () => {
@@ -24,7 +25,9 @@ export const Header = () => {
 				<div>
 					|
 				</div>
-				<img width={16} height={16} src="img/cart.svg" alt="cart"/>
+				<Link to='/cart'>
+					<img width={16} height={16} src="img/cart.svg" alt="cart"/>
+				</Link>
 				<span>3</span>
 			</div>
 		</div>

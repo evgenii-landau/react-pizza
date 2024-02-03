@@ -1,7 +1,7 @@
 import classes from './Categories.module.scss';
 import React from "react";
 
-export const Categories = () => {
+export const Categories = ({setCategoryId}) => {
 	const [isActive, setIsActive] = React.useState(false)
 
 	const categories = [
@@ -14,9 +14,12 @@ export const Categories = () => {
 	]
 
 	return (
-		<ul className={classes.sorted}>
+		<ul className={classes.categories}>
 			{categories.map((el, index) => (
-				<li key={index} onClick={() => setIsActive(index)} className={isActive === index ? classes.active : null}>
+				<li key={index} onClick={() => {
+					setIsActive(index)
+					setCategoryId(index)
+				}} className={isActive === index ? classes.active : null}>
 					{el}
 				</li>
 			))}
