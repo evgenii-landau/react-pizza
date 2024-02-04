@@ -1,0 +1,19 @@
+input {
+  width: 300px;
+  padding: 10px 30px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  outline: none;
+  color: #000000;
+}
+
+input::placeholder {
+  color: grey;
+  font-size: 16px;
+  font-family: 'PNReg';
+  letter-spacing: 0.2px;
+}
+
+input:focus {
+  border-color: #EB5A1E;
+}

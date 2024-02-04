@@ -9,6 +9,16 @@
   }
 }
 
+.contentMiddle {
+  padding: 35px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contentMiddle h1 {
+  margin: 0;
+}
+
 .contentItems {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -14,16 +14,16 @@ export const CartItem = () => {
 			<div className={classes.rightColumn}>
 				<div>
 					<button>
-						<img src="img/remove-btn.png" alt="Remove Button"/>
+						<img src="img/remove-btn.svg" alt="Remove Button"/>
 					</button>
 					<b>2</b>
 					<button>
-						<img src="img/add-btn.png" alt="Add button"/>
+						<img src="img/add-btn.svg" alt="Add button"/>
 					</button>
 				</div>
 				<b>770 ₽ </b>
 				<button>
-					<img src="img/remove-item-btn.png" alt="Remove Item Button"/>
+					<img src="img/remove-item-btn.svg" alt="Remove Item Button"/>
 				</button>
 			</div>
 		</li>

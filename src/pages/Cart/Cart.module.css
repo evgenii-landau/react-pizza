@@ -13,7 +13,7 @@
 .leftRow {
   display: flex;
 }
-.leftRow svg {
+.leftRow img {
   margin-right: 17px;
 }
 .leftRow h1 {
@@ -25,7 +25,7 @@
   display: flex;
   line-height: 24px;
 }
-.rightRow svg {
+.rightRow img {
   margin-right: 7px;
 }
 .rightRow button {
@@ -73,6 +73,40 @@
   color: rgb(255, 255, 255);
   font-family: PNBold;
   background: rgb(254, 95, 30);
+}
+
+.emptyCart {
+  max-width: 547px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.emptyCart h2 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39px;
+}
+.emptyCart p {
+  margin-bottom: 47px;
+  color: rgb(119, 119, 119);
+  font-size: 18px;
+  line-height: 145.4%;
+  text-align: center;
+}
+.emptyCart img {
+  margin-bottom: 74px;
+}
+.emptyCart button {
+  padding: 15px 40px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  border-radius: 30px;
+  background: rgb(40, 40, 40);
 }
 
 /*# sourceMappingURL=Cart.module.css.map */

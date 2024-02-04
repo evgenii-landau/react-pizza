@@ -1,9 +1,6 @@
 import classes from './Categories.module.scss';
-import React from "react";
 
-export const Categories = ({setCategoryId}) => {
-	const [isActive, setIsActive] = React.useState(false)
-
+export const Categories = ({onCategoryClick, categoryId}) => {
 	const categories = [
 		'Все',
 		'Мясные',
@@ -15,12 +12,11 @@ export const Categories = ({setCategoryId}) => {
 
 	return (
 		<ul className={classes.categories}>
-			{categories.map((el, index) => (
-				<li key={index} onClick={() => {
-					setIsActive(index)
-					setCategoryId(index)
-				}} className={isActive === index ? classes.active : null}>
-					{el}
+			{categories.map((item, index) => (
+				<li key={index}
+					onClick={() => onCategoryClick(index)}
+					className={categoryId === index ? classes.active : null}>
+					{item}
 				</li>
 			))}
 		</ul>

@@ -1,14 +1,18 @@
 import classes from './DropDown.module.scss'
 import {useState} from "react";
 
-export const DropDown = () => {
+export const DropDown = ({setSortType, sortType}) => {
 	const [openDropDown, setOpenDropDown] = useState(false)
-	const [selectItem, setSelectItem] = useState('популярности')
+	const selectItems = [
+						{type: 'price', name: 'цене (возр.)', value: 'asc'},
+						{type: 'price', name: 'цене (убыв.)', value: 'desc'},
+						{type: 'title', name: 'алфавиту'},
+						{type: 'rating', name: 'популярности (возр.)', value: 'asc'},
+						{type: 'rating', name: 'популярности (убыв.)', value: 'desc'}
+	]
 
-	const selectItems = ['цене', 'алфавиту', 'популярности']
-
-	const choseSelectItem = (i) => {
-		setSelectItem(selectItems[i])
+	const choseSelectItem = (obj) => {
+		setSortType(obj)
 		setOpenDropDown(prev => !prev)
 	}
 
@@ -22,13 +26,13 @@ export const DropDown = () => {
 						fill="#2C2C2C"/>
 				</svg>
 				<b>Cортировка по:</b>
-				<span onClick={() => setOpenDropDown(prev => !prev)}>{selectItem}</span>
+				<span onClick={() => setOpenDropDown(prev => !prev)}>{sortType.name}</span>
 			</div>
 			{openDropDown &&
 				<div>
 					<ul className={classes.select}>
-						{selectItems.map((item, i) => (
-							<li key={i} onClick={() => choseSelectItem(i)}>{item}</li>
+						{selectItems.map((obj, i) => (
+							<li key={i} onClick={() => choseSelectItem(obj)}>{obj.name}</li>
 						))}
 					</ul>
 				</div>

@@ -11,6 +11,8 @@ div {
   transform: rotate(180deg);
 }
 .dropDown span {
+  width: 95px;
+  text-align: center;
   color: #FE5F1E;
   font-size: 14px;
   letter-spacing: 0.21px;
