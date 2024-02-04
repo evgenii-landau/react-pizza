@@ -40,13 +40,3 @@ export const DropDown = ({setSortType, sortType}) => {
 		</div>
 	)
 }
-
-
-// <form className={classes.dropDown}>
-// 	<label htmlFor="sort">Сортировка по:</label>
-// 	<select id="sort" name="sort">
-// 		<option value="popular">популярности</option>
-// 		<option value="price">по цене</option>
-// 		<option value="alphabet">по алфавиту</option>
-// 	</select>
-// </form>

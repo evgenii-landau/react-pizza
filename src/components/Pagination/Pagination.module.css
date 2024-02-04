@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.pagination img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.pagination .arrowPrev {
+  transform: rotate(180deg);
+}
+.pagination span {
+  color: #EB5A1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.active {
+  transform: scale(1.1);
+  border: 1px solid #EB5A1E;
+}
+
+/*# sourceMappingURL=Pagination.module.css.map */

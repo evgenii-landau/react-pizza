@@ -6,6 +6,7 @@ import {DropDown} from '../../components/DropDown/DropDown.jsx';
 import {Skeleton} from "../../components/PizzaItem/Skeleton.jsx";
 import {PizzaItemsService} from "../../services /PizzaItemsService.js";
 import {Search} from "../../components/Search/Search.jsx";
+import {Pagination} from "../../components/Pagination/Pagination.jsx";
 
 
 export const Home = () => {
@@ -14,12 +15,13 @@ export const Home = () => {
 	const [categoryId, setCategoryId] = React.useState(0)
 	const [sortType, setSortType] = React.useState({name: 'популярности', type: 'rating'})
 	const [searchValue, setSearchValue] = React.useState('')
+	const [page, setPage] = React.useState(1)
 
 	React.useEffect(() => {
 		setIsLoading(true)
 		async function fetchDataPizzaItems() {
 			try {
-				const data = await PizzaItemsService.getAllPizza([categoryId, sortType.type, sortType.value])
+				const data = await PizzaItemsService.getAllPizza([categoryId, sortType.type, sortType.value, page])
 				setPizzaItems(data)
 			} catch (error) {
 				alert('Error')
@@ -28,7 +30,7 @@ export const Home = () => {
 			setIsLoading(false)
 		}
 		fetchDataPizzaItems()
-	}, [categoryId, sortType]);
+	}, [categoryId, sortType, page]);
 
 	return (
 		<div>
@@ -51,6 +53,7 @@ export const Home = () => {
 					}
 				</ul>
 			</div>
+			<Pagination page={page} setPage={setPage}/>
 		</div>
 	)
 }
