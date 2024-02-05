@@ -1,21 +1,16 @@
 import classes from './Categories.module.scss';
+import {useDispatch} from "react-redux";
+import {setCategoryId} from "../../redux/slices/categoriesSlice.js";
 
-export const Categories = ({onCategoryClick, categoryId}) => {
-	const categories = [
-		'Все',
-		'Мясные',
-		'Вегетарианская',
-		'Гриль',
-		'Острые',
-		'Закрытые',
-	]
+export const Categories = ({categoryState}) => {
+	const dispatch = useDispatch()
 
 	return (
 		<ul className={classes.categories}>
-			{categories.map((item, index) => (
+			{categoryState.categories.map((item, index) => (
 				<li key={index}
-					onClick={() => onCategoryClick(index)}
-					className={categoryId === index ? classes.active : null}>
+					onClick={() => dispatch(setCategoryId(index))}
+					className={categoryState.categoryId === index ? classes.active : null}>
 					{item}
 				</li>
 			))}

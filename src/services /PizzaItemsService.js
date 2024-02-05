@@ -3,7 +3,7 @@ import axios from "axios";
 const URL = 'https://65bb5de852189914b5bbdf1e.mockapi.io/items?'
 
 export const PizzaItemsService = {
-	async getAllPizza([id, type, value, page]) {
+	async getAllPizza(id, type, value, page) {
 		const response = await axios({
 			url: `${URL}${id !== 0 ? `category=${id}` : ''}&sortBy=${type}&order=${value}&page=${page}&limit=4`
 		})
