@@ -1,8 +1,23 @@
+import React from "react";
 import classes from './Search.module.scss';
+import {useDispatch} from "react-redux";
+import {setSearchValue} from "../../redux/slices/filterSlice.js";
 
-export const Search = ({setSearchValue}) => {
+
+export const Search = ({searchValue}) => {
+	const dispatch = useDispatch()
+	const inputRef = React.useRef('')
+
+	const onClickClear= () => {
+		dispatch(setSearchValue(''))
+		inputRef.current.focus()
+	}
 
 	return (
-		<input onChange={(e) => setSearchValue(e.target.value)} placeholder='Найти пиццу...'/>
+		<div className={classes.searchWrapper}>
+			<img className={classes.searchIcon} src="/img/search-icon.svg" alt="Search-icon"/>
+			<input ref={inputRef} onChange={(e) => dispatch(setSearchValue(e.target.value))} value={searchValue} placeholder='Найти пиццу...'/>
+			{searchValue && <img className={classes.closeSearchBtn} src='/img/close-search-btn.svg' alt='Close Search Button' onClick={onClickClear}></img>}
+		</div>
 	)
 }

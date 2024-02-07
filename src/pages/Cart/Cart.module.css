@@ -24,6 +24,7 @@
 .rightRow {
   display: flex;
   line-height: 24px;
+  cursor: pointer;
 }
 .rightRow img {
   margin-right: 7px;

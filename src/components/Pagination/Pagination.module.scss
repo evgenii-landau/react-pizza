@@ -16,6 +16,7 @@
 
   span {
     color: #EB5A1E;
+    font-family: 'PNReg';
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,11 +24,13 @@
     width: 30px;
     border-radius: 50%;
     cursor: pointer;
+    border: 1px solid #EB5A1E;
   }
 }
 
 
-.active {
+span.active {
+  color: #FFFFFF;
   transform: scale(1.1);
-  border: 1px solid #EB5A1E;
+  background-color: #EB5A1E;
 }

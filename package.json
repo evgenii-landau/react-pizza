@@ -13,6 +13,7 @@
     "@reduxjs/toolkit": "^2.1.0",
     "axios": "^1.6.7",
     "normalize.css": "^8.0.1",
+    "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",

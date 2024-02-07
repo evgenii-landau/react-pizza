@@ -1,6 +1,20 @@
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+}
+
 input {
   width: 300px;
-  padding: 10px 30px;
+  padding: 10px 35px;
   border: 1px solid grey;
   border-radius: 5px;
   outline: none;
@@ -16,6 +30,18 @@ input::placeholder {
 
 input:focus {
   border-color: #EB5A1E;
+}
+
+.closeSearchBtn {
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.closeSearchBtn:hover {
+  opacity: 0.7;
 }
 
 /*# sourceMappingURL=Search.module.css.map */

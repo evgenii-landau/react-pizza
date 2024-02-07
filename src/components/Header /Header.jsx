@@ -1,7 +1,11 @@
 import {Link} from "react-router-dom";
 import classes from './Header.module.scss'
+import {useSelector} from "react-redux";
+import {selectCart} from "../../redux/slices/cartSlice.js";
 
 export const Header = () => {
+	const {totalPrice, items} = useSelector(selectCart)
+
 	return (
 		<div className={classes.header}>
 
@@ -20,7 +24,7 @@ export const Header = () => {
 			</div>
 			<div className={classes.headerRight}>
 				<span>
-					520 ₽
+					{totalPrice} ₽
 				</span>
 				<div>
 					|
@@ -28,7 +32,7 @@ export const Header = () => {
 				<Link to='/cart'>
 					<img width={16} height={16} src="img/cart.svg" alt="cart"/>
 				</Link>
-				<span>3</span>
+				<span>{items.length}</span>
 			</div>
 		</div>
 	)
