@@ -6,10 +6,10 @@
 body {
   background: #FFDF8C;
   padding: 0 40px;
-  height: 100vh;
 }
 
 .wrapper {
+  height: 100vh;
   margin: 45px auto;
   max-width: 1330px;
   padding: 0 40px;

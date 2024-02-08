@@ -1,0 +1,32 @@
+.pizzaInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 110px 0;
+  margin: 0 auto;
+  max-width: 450px;
+  height: 300px;
+}
+.pizzaInfo img {
+  width: 240px;
+  margin-bottom: 20px;
+}
+.pizzaInfo h1 {
+  margin-bottom: 40px;
+}
+.pizzaInfo p {
+  line-height: 25px;
+  margin-bottom: 30px;
+  text-indent: 35px;
+}
+.pizzaInfo ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.pizzaInfo li, .pizzaInfo p {
+  font-family: PNReg;
+}
+
+/*# sourceMappingURL=PizzaInfo.module.css.map */

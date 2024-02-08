@@ -2,6 +2,7 @@ import React from "react";
 import classes from './PizzaItem.module.scss';
 import {addItem, selectCartItemById} from "../../redux/slices/cartSlice.js";
 import {useDispatch, useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 
 const typeNames = ['тонкое', 'традиционное']
@@ -29,7 +30,9 @@ export const PizzaItem = ({id, title, price, imageUrl, types, sizes}) => {
 	return (
 		<li className={classes.itemList}>
 			<div className={classes.item}>
-				<img className={classes.pizzaImg} width={260} height={260} src={imageUrl} alt="Pizza"/>
+				<Link to={`/item/${id}`}>
+					<img className={classes.pizzaImg} width={260} height={260} src={imageUrl} alt="Pizza"/>
+				</Link>
 				<h3>
 					{title}
 				</h3>

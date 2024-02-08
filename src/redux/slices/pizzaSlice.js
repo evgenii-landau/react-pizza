@@ -10,9 +10,7 @@ export const fetchPizzas = createAsyncThunk('pizza/fetchPizzasStatus', async (pa
 		const {data} = await axios({
 			url: `${URL}${id !== 0 ? `category=${id}` : ''}&sortBy=${type}&order=${value}&page=${page}&limit=4`
 		})
-		console.log(thunkAPI)
 		return id === 0 ? data : data.filter(el => el.category === id)
-
 	}
 )
 
@@ -26,7 +24,6 @@ const pizzaSlice = createSlice({
 	initialState,
 	reducers: {
 		setItems(state, action) {
-			console.log(state.payload)
 			state.items = action.payload
 		}
 	},
@@ -50,5 +47,4 @@ const pizzaSlice = createSlice({
 export const selectPizzaData = (state) => state.pizza
 
 export const {setItems} = pizzaSlice.actions
-
 export default pizzaSlice.reducer

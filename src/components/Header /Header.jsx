@@ -1,10 +1,11 @@
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import classes from './Header.module.scss'
 import {useSelector} from "react-redux";
 import {selectCart} from "../../redux/slices/cartSlice.js";
 
 export const Header = () => {
 	const {totalPrice, items} = useSelector(selectCart)
+	const location = useLocation()
 
 	return (
 		<div className={classes.header}>
@@ -22,18 +23,23 @@ export const Header = () => {
 					</p>
 				</div>
 			</div>
-			<div className={classes.headerRight}>
-				<span>
-					{totalPrice} ₽
-				</span>
-				<div>
-					|
-				</div>
-				<Link to='/cart'>
-					<img width={16} height={16} src="img/cart.svg" alt="cart"/>
-				</Link>
-				<span>{items.length}</span>
-			</div>
+			{location.pathname === '/' ? (
+				<>
+					<div className={classes.headerRight}>
+						<span>
+							{totalPrice} ₽
+						</span>
+						<div>
+							|
+						</div>
+						<Link to='/cart'>
+							<img width={16} height={16} src="img/cart.svg" alt="cart"/>
+						</Link>
+						<span>{items.length}</span>
+					</div>
+				</>
+			) : null}
+
 		</div>
 	)
 }

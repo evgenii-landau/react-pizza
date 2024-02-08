@@ -1,0 +1,32 @@
+.pizzaInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 110px 0;
+  margin: 0 auto;
+  max-width: 450px;
+  height: 300px;
+
+  img {
+    width: 240px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    margin-bottom: 40px;
+  }
+  p {
+    line-height: 25px;
+    margin-bottom: 30px;
+    text-indent: 35px;
+
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  li, p {
+    font-family: PNReg;
+  }
+}

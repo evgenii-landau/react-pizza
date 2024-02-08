@@ -11,7 +11,7 @@ import {fetchPizzas, selectPizzaData} from "../../redux/slices/pizzaSlice.js";
 import {selectFilter} from "../../redux/slices/filterSlice.js";
 
 export const Home = () => {
-	const {searchValue, categoryId, currentPage, isDropDownOpen, sortType: {type, value, name}, sortType} = useSelector(selectFilter)
+	const {searchValue, categoryId, currentPage, isDropDownOpen, sortType: {type, value, name}} = useSelector(selectFilter)
 	const {items, status} = useSelector(selectPizzaData)
 	const dispatch = useDispatch()
 
@@ -22,8 +22,7 @@ export const Home = () => {
 		}
 
 		getPizzas()
-	}, []);
-	// categoryId, sortType, currentPage
+	}, [categoryId, type, value, currentPage]);
 
 	return (
 		<div>
