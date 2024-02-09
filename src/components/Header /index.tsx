@@ -2,8 +2,9 @@ import {Link, useLocation} from "react-router-dom";
 import classes from './Header.module.scss'
 import {useSelector} from "react-redux";
 import {selectCart} from "../../redux/slices/cartSlice.js";
+import logo from '/public/img/logo.png'
 
-export const Header = () => {
+export const Header: React.FC = () => {
 	const {totalPrice, items} = useSelector(selectCart)
 	const location = useLocation()
 
@@ -12,7 +13,7 @@ export const Header = () => {
 
 			<div className={classes.headerLeft}>
 				<a href="/">
-					<img src="img/logo.png" alt="Logo"/>
+					<img src={logo} alt="Logo"/>
 				</a>
 				<div>
 					<h2>

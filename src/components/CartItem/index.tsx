@@ -2,9 +2,19 @@ import classes from './CartItem.module.scss';
 import {useDispatch} from "react-redux";
 import {plusItem, minusItem, removeItem} from "../../redux/slices/cartSlice.js";
 
-export const CartItem = ({id, title, price, imageUrl, type, size, count}) => {
-	const dispatch = useDispatch()
+type CartItemProps = {
+	id: number;
+	title: string;
+	price: number;
+	imageUrl: string;
+	type: string;
+	size: number;
+	count: number;
+}
 
+export const CartItem: React.FC<CartItemProps> = ({id, title, price, imageUrl, type, size, count}) => {
+	const dispatch = useDispatch()
+	console.log({id, title, price, imageUrl, type, size, count})
 	return (
 		<li className={classes.item}>
 			<div className={classes.leftColumn}>

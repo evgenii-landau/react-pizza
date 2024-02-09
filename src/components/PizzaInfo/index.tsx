@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom';
 import {pizzaDescriptions} from '../../pizzaDescriptions..js';
 import axios from "axios";
 
-interface PizzaInfo {
+type TypePizzaInfo = {
 	imageUrl: string;
 	title: string;
 	price: number;
@@ -12,7 +12,7 @@ interface PizzaInfo {
 
 export const PizzaInfo: React.FC = () => {
 	const {id} = useParams()
-	const [pizzaInfo, setPizzaInfo] = React.useState<PizzaInfo | undefined>()
+	const [pizzaInfo, setPizzaInfo] = React.useState<TypePizzaInfo | undefined>()
 	
 
 	React.useEffect(() => {

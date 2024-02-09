@@ -1,8 +1,8 @@
 import {Routes, Route} from "react-router-dom";
-import {Home} from "./pages/Home/Home.jsx";
-import {Cart} from "./pages/Cart/Cart.jsx";
-import {PizzaInfo} from "./components/PizzaInfo/PizzaInfo.js";
-import {MainLayouts} from "./layouts/MainLayouts.jsx";
+import {Home} from "./pages/Home";
+import {Cart} from "./pages/Cart";
+import {PizzaInfo} from "./components/PizzaInfo";
+import {MainLayouts} from "./layouts/MainLayouts.tsx";
 
 
 function App() {

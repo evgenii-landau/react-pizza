@@ -1,13 +1,18 @@
 import classes from './Pagination.module.scss';
 import {useDispatch} from "react-redux";
 import {setPages} from "../../redux/slices/filterSlice.js";
+import React from "react";
 
 const pages = [1, 2, 3]
 
-export const Pagination = ({currentPage}) => {
+type TypePaginationProps = {
+	currentPage: number
+}
+
+export const Pagination: React.FC <TypePaginationProps> = ({currentPage}) => {
 	const dispatch = useDispatch()
 
-	const onCheckPage = (item) => {
+	const onCheckPage = (item: number) => {
 		pages.includes(item) && dispatch(setPages(item))
 	}
 

@@ -4,13 +4,18 @@ import {useDispatch} from "react-redux";
 import {setSearchValue} from "../../redux/slices/filterSlice.js";
 
 
-export const Search = ({searchValue}) => {
-	const dispatch = useDispatch()
-	const inputRef = React.useRef('')
+type TypeSearchProps = {
+	searchValue: string
+}
 
-	const onClickClear= () => {
+
+export const Search: React.FC <TypeSearchProps> = ({searchValue}) => {
+	const dispatch = useDispatch()
+	const inputRef = React.useRef<HTMLInputElement>(null)
+
+	const onClickClear = () => {
 		dispatch(setSearchValue(''))
-		inputRef.current.focus()
+		inputRef.current?.focus()
 	}
 
 	return (

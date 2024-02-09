@@ -1,24 +1,24 @@
 import React from 'react';
 import classes from './Home.module.scss';
-import {PizzaItem} from '../../components/PizzaItem/PizzaItem.jsx';
-import {Categories} from '../../components/Categories/Categories.jsx';
-import {DropDown} from '../../components/DropDown/DropDown.jsx';
-import {Skeleton} from '../../components/PizzaItem/Skeleton.jsx';
-import {Search} from '../../components/Search/Search.jsx';
-import {Pagination} from '../../components/Pagination/Pagination.jsx';
+import {PizzaItem} from '../../components/PizzaItem';
+import {Categories} from '../../components/Categories';
+import {DropDown} from '../../components/DropDown';
+import {Skeleton} from '../../components/PizzaItem/Skeleton';
+import {Search} from '../../components/Search';
+import {Pagination} from "../../components/Pagination";
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchPizzas, selectPizzaData} from "../../redux/slices/pizzaSlice.js";
 import {selectFilter} from "../../redux/slices/filterSlice.js";
 
-export const Home = () => {
-	const {searchValue, categoryId, currentPage, isDropDownOpen, sortType: {type, value, name}} = useSelector(selectFilter)
+export const Home: React.FC = () => {
+	const {searchValue, categoryId, currentPage, sortType: {type, value, name}} = useSelector(selectFilter)
 	const {items, status} = useSelector(selectPizzaData)
 	const dispatch = useDispatch()
 
 
 	React.useEffect(() => {
 		async function getPizzas() {
-			dispatch(fetchPizzas([categoryId, type, value, currentPage]))
+			dispatch(fetchPizzas({categoryId, type, value, currentPage}))
 		}
 
 		getPizzas()
@@ -28,8 +28,7 @@ export const Home = () => {
 		<div>
 			<div className={classes.contentTop}>
 				<Categories categoryId={categoryId}/>
-				<DropDown isOpen={isDropDownOpen}
-						  name={name}/>
+				<DropDown name={name}/>
 			</div>
 			<div className={classes.contentMiddle}>
 				<h1>

@@ -1,26 +1,41 @@
 import classes from './DropDown.module.scss'
 import {useDispatch} from "react-redux";
-import {choseSelectItem, openDropDown} from "../../redux/slices/filterSlice.js";
+import {choseSelectItem} from "../../redux/slices/filterSlice.js";
 import React from "react";
 
 
-const selectItems = [
+type TypeSelectItems = {
+	type: string;
+	name: string;
+	value: string;
+}
+
+type TypeDropDownProps = {
+	name: 'string'
+}
+
+const selectItems: TypeSelectItems[] = [
 	{type: 'price', name: 'цене (возр.)', value: 'asc'},
 	{type: 'price', name: 'цене (убыв.)', value: 'desc'},
-	{type: 'title', name: 'алфавиту'},
+	{type: 'title', name: 'алфавиту', value: ''},
 	{type: 'rating', name: 'популярности (возр.)', value: 'asc'},
 	{type: 'rating', name: 'популярности (убыв.)', value: 'desc'}
 ]
 
-export const DropDown = ({isOpen, name}) => {
-	const dropDownRef = React.useRef()
+export const DropDown: React.FC<TypeDropDownProps> = ({name}) => {
+	const [isOpen, setIsOpen] = React.useState(false)
+	const dropDownRef = React.useRef<HTMLDivElement | null>(null)
 	const dispatch = useDispatch()
 
+	const onClickListItem = (obj: TypeSelectItems) => {
+		dispatch(choseSelectItem(obj))
+		setIsOpen(false)
+	}
 
 	React.useEffect(() => {
-		const handleClickOutside = (event) => {
-			if (!event.composedPath().includes(dropDownRef.current)) {
-				dispatch(openDropDown(false))
+		const handleClickOutside = (event: MouseEvent) => {
+			if (dropDownRef.current && (!event.composedPath().includes(dropDownRef.current))) {
+				setIsOpen(false)
 			}
 		}
 
@@ -29,8 +44,9 @@ export const DropDown = ({isOpen, name}) => {
 		return () => document.body.removeEventListener('click', handleClickOutside)
 	}, [])
 
+
 	return (
-		<div ref={dropDownRef} onClick={(e) => e}>
+		<div ref={dropDownRef}>
 			<div className={classes.dropDown}>
 				<svg className={isOpen && classes.rotate} width="10" height="6" viewBox="0 0 10 6"
 					 fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,13 +55,13 @@ export const DropDown = ({isOpen, name}) => {
 						fill="#2C2C2C"/>
 				</svg>
 				<b>Cортировка по:</b>
-				<span onClick={() => dispatch(openDropDown(true))}>{name}</span>
+				<span onClick={() => setIsOpen(true)}>{name}</span>
 			</div>
 			{isOpen &&
 				<div>
 					<ul className={classes.select}>
 						{selectItems.map((obj, i) => (
-							<li key={i} onClick={() => dispatch(choseSelectItem(obj))}>{obj.name}</li>
+							<li key={i} onClick={() => onClickListItem(obj)}>{obj.name}</li>
 						))}
 					</ul>
 				</div>

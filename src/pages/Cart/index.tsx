@@ -1,13 +1,15 @@
 import classes from './Cart.module.scss';
-import {CartItem} from "../../components/CartItem/CartItem.jsx";
-import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {clearCart} from "../../redux/slices/cartSlice.js";
-import {selectCart} from "../../redux/slices/cartSlice.js";
+import {CartItem} from '../../components/CartItem';
+import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {clearCart} from '../../redux/slices/cartSlice.js';
+import {selectCart} from '../../redux/slices/cartSlice.js';
+import React from "react";
 
-export const Cart = () => {
+export const Cart: React.FC = () => {
 	const dispatch = useDispatch()
 	const {totalPrice, items} = useSelector(selectCart)
+	
 
 	return (
 		<div className={classes.cart}>

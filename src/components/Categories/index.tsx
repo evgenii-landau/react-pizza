@@ -1,7 +1,12 @@
 import classes from './Categories.module.scss';
 import {useDispatch} from "react-redux";
 import {setCategoryId} from "../../redux/slices/filterSlice.js";
+import React from "react";
 
+
+type CategoriesProps = {
+	categoryId: number
+}
 
 const categories = [
 	'Все',
@@ -12,7 +17,7 @@ const categories = [
 	'Закрытые',
 ]
 
-export const Categories = ({categoryId}) => {
+export const Categories: React.FC<CategoriesProps> = ({categoryId}) => {
 	const dispatch = useDispatch()
 
 
