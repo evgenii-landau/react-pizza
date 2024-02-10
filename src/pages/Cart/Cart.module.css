@@ -35,6 +35,13 @@
   font-size: 16px;
   line-height: 19px;
 }
+.rightRow button:hover {
+  opacity: 0.7;
+  border-bottom: 1px solid rgb(182, 182, 182);
+}
+.rightRow button:active {
+  color: #000;
+}
 
 .orderInfo {
   display: flex;
@@ -68,6 +75,11 @@
   font-family: PNReg;
   border: 1px solid rgb(211, 211, 211);
   background: rgb(255, 255, 255);
+}
+.btnBack:hover {
+  opacity: 0.7;
+  background-color: rgb(254, 95, 30);
+  color: wheat;
 }
 
 .btnPay {

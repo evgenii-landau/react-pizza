@@ -17,9 +17,8 @@ const categories = [
 	'Закрытые',
 ]
 
-export const Categories: React.FC<CategoriesProps> = ({categoryId}) => {
+export const Categories: React.FC <CategoriesProps> = React.memo(({categoryId}) => {
 	const dispatch = useDispatch()
-
 
 	return (
 		<ul className={classes.categories}>
@@ -32,4 +31,4 @@ export const Categories: React.FC<CategoriesProps> = ({categoryId}) => {
 			))}
 		</ul>
 	)
-}
+})

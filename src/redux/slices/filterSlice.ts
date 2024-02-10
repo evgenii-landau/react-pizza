@@ -2,18 +2,17 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../store";
 
 
-
-type TypeSort = { // Можно заменить в Drop Down есть такой же тип.
-	name: string
-	type: string
-	value: string
-}
-
 interface FilterSliceState {
 	searchValue: string
 	categoryId: number
 	sortType: TypeSort
 	currentPage: number
+}
+
+type TypeSort = { // Можно заменить в Drop Down есть такой же тип.
+	name: string
+	type: string
+	value: string
 }
 
 const initialState: FilterSliceState = {
@@ -54,6 +53,6 @@ const filterSlice = createSlice({
 
 export const selectFilter = (state: RootState) => state.filter
 
-export const { setCategoryId, choseSelectItem, setPages, setSearchValue } = filterSlice.actions
+export const {setCategoryId, choseSelectItem, setPages, setSearchValue} = filterSlice.actions
 
 export default filterSlice.reducer

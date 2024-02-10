@@ -9,7 +9,7 @@ import React from "react";
 export const Cart: React.FC = () => {
 	const dispatch = useDispatch()
 	const {totalPrice, items} = useSelector(selectCart)
-	
+
 
 	return (
 		<div className={classes.cart}>
@@ -28,7 +28,7 @@ export const Cart: React.FC = () => {
 
 					<ul>
 						{items.map(item => (
-							<CartItem key={item.id} totalPrice={totalPrice} {...item}></CartItem>
+							<CartItem key={item.id} {...item}></CartItem>
 						))}
 					</ul>
 					<div className={classes.orderInfo}>

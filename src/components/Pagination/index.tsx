@@ -9,7 +9,7 @@ type TypePaginationProps = {
 	currentPage: number
 }
 
-export const Pagination: React.FC <TypePaginationProps> = ({currentPage}) => {
+export const Pagination: React.FC <TypePaginationProps> = React.memo(({currentPage}) => {
 	const dispatch = useDispatch()
 
 	const onCheckPage = (item: number) => {
@@ -25,4 +25,4 @@ export const Pagination: React.FC <TypePaginationProps> = ({currentPage}) => {
 			<img onClick={() => onCheckPage(currentPage + 1)} src='img/pagination.svg' alt="arrow"/>
 		</div>
 	)
-}
+})

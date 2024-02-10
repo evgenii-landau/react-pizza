@@ -1,6 +1,6 @@
 import classes from './CartItem.module.scss';
-import {useDispatch} from "react-redux";
 import {plusItem, minusItem, removeItem} from "../../redux/slices/cartSlice.js";
+import {useDispatch} from "react-redux";
 
 type CartItemProps = {
 	id: number;
@@ -14,7 +14,8 @@ type CartItemProps = {
 
 export const CartItem: React.FC<CartItemProps> = ({id, title, price, imageUrl, type, size, count}) => {
 	const dispatch = useDispatch()
-	console.log({id, title, price, imageUrl, type, size, count})
+
+	
 	return (
 		<li className={classes.item}>
 			<div className={classes.leftColumn}>
@@ -27,7 +28,7 @@ export const CartItem: React.FC<CartItemProps> = ({id, title, price, imageUrl, t
 			</div>
 			<div className={classes.rightColumn}>
 				<div>
-					<button onClick={() => dispatch(minusItem(id))}>
+					<button className={count === 1 ? classes.disabled : ''} disabled={count === 1} onClick={() => dispatch(minusItem(id))}>
 						<img src="img/remove-btn.svg" alt="Remove Button"/>
 					</button>
 					<b>{count}</b>

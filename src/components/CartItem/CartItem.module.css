@@ -44,7 +44,17 @@
 .rightColumn {
   display: flex;
   align-items: center;
-  gap: 93px;
+  justify-content: space-between;
+  max-width: 300px;
+  flex-grow: 1;
+}
+.rightColumn .disabled {
+  opacity: 0.4;
+}
+.rightColumn b {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
 }
 @media (max-width: 840px) {
   .rightColumn {
@@ -58,7 +68,9 @@
 }
 .rightColumn div {
   display: flex;
-  gap: 12px;
+  max-width: 100px;
+  flex-grow: 1;
+  justify-content: space-between;
   align-items: center;
 }
 

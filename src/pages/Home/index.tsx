@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import classes from './Home.module.scss';
 import {PizzaItem} from '../../components/PizzaItem';
 import {Categories} from '../../components/Categories';
@@ -6,15 +6,15 @@ import {DropDown} from '../../components/DropDown';
 import {Skeleton} from '../../components/PizzaItem/Skeleton';
 import {Search} from '../../components/Search';
 import {Pagination} from "../../components/Pagination";
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
+import {useAppDispatch} from "../../redux/store";
 import {fetchPizzas, selectPizzaData} from "../../redux/slices/pizzaSlice.js";
 import {selectFilter} from "../../redux/slices/filterSlice.js";
 
 export const Home: React.FC = () => {
 	const {searchValue, categoryId, currentPage, sortType: {type, value, name}} = useSelector(selectFilter)
 	const {items, status} = useSelector(selectPizzaData)
-	const dispatch = useDispatch()
-
+	const dispatch = useAppDispatch()
 
 	React.useEffect(() => {
 		async function getPizzas() {
@@ -23,6 +23,7 @@ export const Home: React.FC = () => {
 
 		getPizzas()
 	}, [categoryId, type, value, currentPage]);
+	
 
 	return (
 		<div>

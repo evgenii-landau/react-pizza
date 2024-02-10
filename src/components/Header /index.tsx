@@ -1,12 +1,22 @@
+import React from "react";
 import {Link, useLocation} from "react-router-dom";
 import classes from './Header.module.scss'
 import {useSelector} from "react-redux";
 import {selectCart} from "../../redux/slices/cartSlice.js";
 import logo from '/public/img/logo.png'
 
+
 export const Header: React.FC = () => {
 	const {totalPrice, items} = useSelector(selectCart)
 	const location = useLocation()
+
+	React.useEffect(() => {
+		if (localStorage.getItem('cart')) {
+			console.log(1)
+		}
+		const json = JSON.stringify(items)
+		localStorage.setItem('cart', json)
+	}, [items])
 
 	return (
 		<div className={classes.header}>
@@ -40,7 +50,6 @@ export const Header: React.FC = () => {
 					</div>
 				</>
 			) : null}
-
 		</div>
 	)
 }

@@ -3,13 +3,12 @@ import classes from './Search.module.scss';
 import {useDispatch} from "react-redux";
 import {setSearchValue} from "../../redux/slices/filterSlice.js";
 
-
 type TypeSearchProps = {
 	searchValue: string
 }
 
 
-export const Search: React.FC <TypeSearchProps> = ({searchValue}) => {
+export const Search: React.FC <TypeSearchProps> = React.memo(({searchValue}) => {
 	const dispatch = useDispatch()
 	const inputRef = React.useRef<HTMLInputElement>(null)
 
@@ -25,4 +24,4 @@ export const Search: React.FC <TypeSearchProps> = ({searchValue}) => {
 			{searchValue && <img className={classes.closeSearchBtn} src='/img/close-search-btn.svg' alt='Close Search Button' onClick={onClickClear}></img>}
 		</div>
 	)
-}
+})
