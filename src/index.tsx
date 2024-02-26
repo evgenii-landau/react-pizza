@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import 'normalize.css'
 import './index.css'
-import {HashRouter} from "react-router-dom";
-import {store} from './redux/store.ts'
+import {HashRouter} from 'react-router-dom';
+import {store} from './redux/store'
 import {Provider} from 'react-redux';
 
 
