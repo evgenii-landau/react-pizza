@@ -20,7 +20,7 @@ export const Pagination: React.FC <TypePaginationProps> = React.memo(({currentPa
 		<div className={classes.pagination}>
 			<img onClick={() => onCheckPage(currentPage - 1)} className={classes.arrowPrev} src='img/pagination.svg' alt="arrow"/>
 			{pages.map((num, i) => (
-				<span key={i} className={currentPage === i + 1 && classes.active} onClick={() => dispatch(setPages(num))}>{num}</span>
+				<span key={i} className={currentPage === i + 1 ? classes.active : ''} onClick={() => dispatch(setPages(num))}>{num}</span>
 			))}
 			<img onClick={() => onCheckPage(currentPage + 1)} src='img/pagination.svg' alt="arrow"/>
 		</div>

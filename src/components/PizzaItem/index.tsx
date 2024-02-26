@@ -50,13 +50,13 @@ export const PizzaItem: React.FC <TypePizzaItemProps> = ({id, title, price, imag
 					<div className={classes.selectRowOne}>
 						{types.map(typeId => (
 							<span key={typeId} onClick={() => setActiveType(typeId)}
-								  className={activeType === typeId ? classes.active : null}>{typeNames[typeId]}</span>
+								  className={activeType === typeId ? classes.active : ''}>{typeNames[typeId]}</span>
 						))}
 					</div>
 					<div className={classes.selectRowTwo}>
 						{sizes.map((size, i) => (
 							<span key={i} onClick={() => setActiveSize(i)}
-								  className={activeSize === i ? classes.active : null}>{size} см.</span>
+								  className={activeSize === i ? classes.active : ''}>{size} см.</span>
 						))}
 					</div>
 				</div>
@@ -84,8 +84,8 @@ export const PizzaItem: React.FC <TypePizzaItemProps> = ({id, title, price, imag
 							</g>
 							<defs>
 								<filter id="filter0_d_0_1" x="-217" y="-768" width="1368" height="1449"
-										filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+										filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+									<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 									<feColorMatrix in="SourceAlpha" type="matrix"
 												   values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
 												   result="hardAlpha"/>

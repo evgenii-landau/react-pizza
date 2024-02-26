@@ -12,7 +12,6 @@ export const Header: React.FC = () => {
 
 	React.useEffect(() => {
 		if (localStorage.getItem('cart')) {
-			console.log(1)
 		}
 		const json = JSON.stringify(items)
 		localStorage.setItem('cart', json)
@@ -49,7 +48,7 @@ export const Header: React.FC = () => {
 						<span>{items.length}</span>
 					</div>
 				</>
-			) : null}
+			) : ''}
 		</div>
 	)
 }
