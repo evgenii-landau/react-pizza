@@ -2,7 +2,7 @@ import {Routes, Route} from "react-router-dom";
 import {Home} from "./pages/Home";
 import {Cart} from "./pages/Cart";
 import {PizzaInfo} from "./components/PizzaInfo";
-import {MainLayouts} from "./layouts/MainLayouts.tsx";
+import {MainLayouts} from "./layouts/MainLayouts";
 
 
 function App() {
