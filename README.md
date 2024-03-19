@@ -1,8 +1,41 @@
-# React + Vite
+## React Pizza Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект представляет собой веб-сайт React Pizza, разработанный с использованием React, Redux Toolkit и React Router для создания интерактивного пользовательского интерфейса.
 
-Currently, two official plugins are available:
+## Описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React Pizza - это веб-сайт, посвященный пицце, где пользователи могут просматривать меню, выбирать пиццы и оформлять заказы.
+
+## Основные функции
+
+- Просмотр меню с различными видами пиццы и их ценами.
+- Добавление пицц в корзину и их удаление.
+- Использование Redux Toolkit для управления состоянием приложения.
+- Использование React Router для навигации по страницам.
+- Реализована пагинация
+- Сортировка по видам пицц, по алфавиту / цене (возр, убыв) / популярности (возр, убыв).
+- Управление количеством пицц
+
+## Как использовать
+
+1. Установите зависимости:
+yarn
+
+2. Запустите приложение в режиме разработки:
+yarn dev
+
+3. Сборка приложения для развертывания:
+yarn build
+
+4. Разверните приложение:
+yarn deploy
+
+## Технологии
+
+- React
+- Redux Toolkit
+- React Router
+
+## Автор
+
+evgenii-landau
