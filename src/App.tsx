@@ -19,7 +19,7 @@ function App() {
 						element={<Cart/>}>
 					</Route>
 					<Route path='item/:id'
-						   element={<PizzaInfo/>}>
+								 element={<PizzaInfo/>}>
 					</Route>
 				</Route>
 			</Routes>

@@ -19,9 +19,9 @@ export const Search: React.FC <TypeSearchProps> = React.memo(({searchValue}) => 
 
 	return (
 		<div className={classes.searchWrapper}>
-			<img className={classes.searchIcon} src="/img/search-icon.svg" alt="Search-icon"/>
+			<img className={classes.searchIcon} src="img/search-icon.svg" alt="Search-icon"/>
 			<input ref={inputRef} onChange={(e) => dispatch(setSearchValue(e.target.value))} value={searchValue} placeholder='Найти пиццу...'/>
-			{searchValue && <img className={classes.closeSearchBtn} src='/img/close-search-btn.svg' alt='Close Search Button' onClick={onClickClear}></img>}
+			{searchValue && <img className={classes.closeSearchBtn} src='img/close-search-btn.svg' alt='Close Search Button' onClick={onClickClear}></img>}
 		</div>
 	)
 })
